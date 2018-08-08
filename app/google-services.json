@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "570835447730",
+    "firebase_url": "https://udemy-flashchat-ae647.firebaseio.com",
+    "project_id": "udemy-flashchat-ae647",
+    "storage_bucket": "udemy-flashchat-ae647.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570835447730:android:8d5dad698c470ba2",
+        "android_client_info": {
+          "package_name": "com.egloffgroup.flashchatnewfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570835447730-ofa6gsirfnjklmj6co6ka1o8trm1m5dc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyBXXCOxaym8fGxiB64Ldi_fKzvqA-mqQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
