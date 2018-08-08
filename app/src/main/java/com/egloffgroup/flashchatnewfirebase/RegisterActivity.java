@@ -1,5 +1,8 @@
 package com.egloffgroup.flashchatnewfirebase;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -144,6 +147,8 @@ public class RegisterActivity extends AppCompatActivity {
                     String temp =  task.getResult().toString();
                     Toast.makeText(RegisterActivity.this, temp,
                             Toast.LENGTH_SHORT).show();
+                    saveDisplayName();
+                    showSuccessDialog("user created");
                 }
             }
         });
@@ -152,7 +157,11 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     // TODO: Save the display name to Shared Preferences
-
+    private void saveDisplayName() {
+        String displayName = mUsernameView.getText().toString();
+        SharedPreferences prefs = getSharedPreferences(CHAT_PREFS,0);
+        prefs.edit().putString(DISPLAY_NAME_KEY,displayName).apply();
+    }
 
     // TODO: Create an alert dialog to show in case registration failed
     private void showErrorDialog(String message) {
@@ -164,6 +173,21 @@ public class RegisterActivity extends AppCompatActivity {
                 .show();
     }
 
+    private void showSuccessDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle("OH YEAH")
+                .setMessage(message)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                        finish();
+                        startActivity(intent);
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .show();
+    }
 
 
 }
